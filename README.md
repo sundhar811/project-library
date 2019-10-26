@@ -10,4 +10,8 @@ Project Personal Library
 4) You will add any security features to `server.js`
 5) You will create all of the functional tests in `tests/2_functional-tests.js`
 
+## Challenge link
+https://www.freecodecamp.org/learn/information-security-and-quality-assurance/information-security-and-quality-assurance-projects/personal-library
 
+## Project link
+https://glitch.com/~sundhar811-project-library
