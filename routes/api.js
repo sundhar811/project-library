@@ -43,6 +43,7 @@ module.exports = function (app) {
     .post(function (req, res){
       let title = req.body.title;
       //response will contain new book object including atleast _id and title
+      if (!title) return res.send('missing title');
       getDBConnection().then(client => {
         let db = client.db('test');
         db.collection('library').insertOne({ title, comments: [] })
@@ -70,7 +71,7 @@ module.exports = function (app) {
       getDBConnection().then(client => {
         let db = client.db('test');
         db.collection('library').find({ _id: ObjectId(bookid) }).toArray()
-          .then(result => res.send(result))
+          .then(result => res.send(result.length ? result[0] : 'no book exists'))
           .catch(err => Promise.reject(err));
       });
     })
